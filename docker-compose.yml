@@ -1,8 +1,6 @@
-version: '3.8'
-
 services:
   app:
-    container_name: automacao-app
+    container_name: automocaodb
     build:
       context: .
     volumes:
@@ -12,14 +10,14 @@ services:
       - 8080:8080
 
   db:
-    image: mysql
-    container_name: automacao-db
+    image: mariadb:latest
+    container_name: automocaodb
     restart: always
     environment:
       MYSQL_USER: user
-      MYSQL_PASSWORD: password
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: automacao
+      MYSQL_PASSWORD: '@User2024'
+      MYSQL_ROOT_PASSWORD: d27m11a2003
+      MYSQL_DATABASE: automocaodb
     ports:
       - 3306:3306
     volumes:
